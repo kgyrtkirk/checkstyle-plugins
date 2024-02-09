@@ -13,36 +13,36 @@ import java.util.Set;
 public class FunctionArgsAlignmentRule extends AbstractCheck
 {
 
-  static class A1 implements Cloneable {
+  static class QA1 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("codeql[missing-clone-method]")
-  static class XA12 implements Cloneable {
+  static class QXA12 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("codeql[java/missing-clone-method]")
-  static class XXXA12 implements Cloneable {
+  static class QXXXA12 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("lgtm[java/missing-clone-method]")
-  static class XXXA1X2 implements Cloneable {
+  static class QXXXA1X2 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("codeql[]")
-  static class XA13 implements Cloneable {
+  static class QXA13 implements Cloneable {
     int asd;
   }
 
-  @SuppressWarnings("lqtm")
-  static class XA14 implements Cloneable {
+  @SuppressWarnings("lgtm")
+  static class QXA14 implements Cloneable {
     int asd;
   }
-  @SuppressWarnings("lqtm[]")
-  static class XA15 implements Cloneable {
+  @SuppressWarnings("lgtm[]")
+  static class QXA15 implements Cloneable {
     int asd;
   }
 
