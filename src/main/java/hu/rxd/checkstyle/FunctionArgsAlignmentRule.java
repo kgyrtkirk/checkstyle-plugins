@@ -18,21 +18,26 @@ public class FunctionArgsAlignmentRule extends AbstractCheck
   }
 
   @SuppressWarnings("codeql[missing-clone-method]")
-  static class A12 implements Cloneable {
+  static class XA12 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("codeql[java/missing-clone-method]")
+  static class XXXA12 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("codeql[]")
-  static class A13 implements Cloneable {
+  static class XA13 implements Cloneable {
     int asd;
   }
 
   @SuppressWarnings("lqtm")
-  static class A14 implements Cloneable {
+  static class XA14 implements Cloneable {
     int asd;
   }
   @SuppressWarnings("lqtm[]")
-  static class A15 implements Cloneable {
+  static class XA15 implements Cloneable {
     int asd;
   }
 
