@@ -12,6 +12,10 @@ import java.util.Set;
 
 public class FunctionArgsAlignmentRule extends AbstractCheck
 {
+
+  static class A1 implements Cloneable {
+    int asd;
+  }
   public static final String ARGS_MISALIGNED = "arguments.misaligned";
   public static final String ARGS_MIXED_LINES = "arguments.mixed.lines";
   private Set<String> include = Collections.emptySet();
