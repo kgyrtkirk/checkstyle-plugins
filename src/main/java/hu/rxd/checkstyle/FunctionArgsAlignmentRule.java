@@ -27,6 +27,11 @@ public class FunctionArgsAlignmentRule extends AbstractCheck
     int asd;
   }
 
+  @SuppressWarnings("lgtm[java/missing-clone-method]")
+  static class XXXA1X2 implements Cloneable {
+    int asd;
+  }
+
   @SuppressWarnings("codeql[]")
   static class XA13 implements Cloneable {
     int asd;
