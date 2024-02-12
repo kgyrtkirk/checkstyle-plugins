@@ -12,6 +12,29 @@ import java.util.Set;
 
 public class FunctionArgsAlignmentRule extends AbstractCheck
 {
+  void asd() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("codeql")
+  void asd1() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("lgtm")
+  void asd2() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("codeql[]")
+  void xasd1() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("lgtm[]")
+  void xasd2() {
+    String.format("%s%s", ""); // missing
+  }
 
   static class QA1 implements Cloneable {
     int asd;
