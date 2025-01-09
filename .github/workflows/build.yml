@@ -5,7 +5,14 @@ on:
   pull_request:
 
 jobs:
+  joke:
+    runs-on: ubuntu-latest
+    steps:
+    - name: joke
+      run: ls
+
   build-gradle-project:
+    needs: joke
     runs-on: ubuntu-latest
     steps:
     - name: Checkout project sources
@@ -14,3 +21,10 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle Wrapper
       run: ./gradlew build
+
+  actions-timeline:
+    needs: [joke,build-gradle-project]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Kesin11/actions-timeline@v2
+
