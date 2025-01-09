@@ -25,7 +25,6 @@ jobs:
       run: ./gradlew build
 
   b2:
-    needs: build-gradle-project
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
