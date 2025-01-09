@@ -52,6 +52,7 @@ jobs:
   actions-timeline:
     needs: [joke,build-gradle-project,b2,joke2]
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     steps:
       - uses: Kesin11/actions-timeline@v2
 
