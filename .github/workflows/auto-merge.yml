@@ -1,6 +1,8 @@
-name: Build / Test
+name: auto-merge
 
 on:
+  workflow_run:
+    workflows: [Build / Test]
   push:
     branches: [ '**' ]
   pull_request:
