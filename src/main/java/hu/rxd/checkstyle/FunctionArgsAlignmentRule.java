@@ -12,6 +12,63 @@ import java.util.Set;
 
 public class FunctionArgsAlignmentRule extends AbstractCheck
 {
+  void asd() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("codeql")
+  void asd1() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("lgtm")
+  void asd2() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("codeql[]")
+  void xasd1() {
+    String.format("%s%s", ""); // missing
+  }
+
+  @SuppressWarnings("lgtm[]")
+  void xasd2() {
+    String.format("%s%s", ""); // missing
+  }
+
+  static class QA1 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("codeql[missing-clone-method]")
+  static class QXA12 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("codeql[java/missing-clone-method]")
+  static class QXXXA12 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("lgtm[java/missing-clone-method]")
+  static class QXXXA1X2 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("codeql[]")
+  static class QXA13 implements Cloneable {
+    int asd;
+  }
+
+  @SuppressWarnings("lgtm")
+  static class QXA14 implements Cloneable {
+    int asd;
+  }
+  @SuppressWarnings("lgtm[]")
+  static class QXA15 implements Cloneable {
+    int asd;
+  }
+
   public static final String ARGS_MISALIGNED = "arguments.misaligned";
   public static final String ARGS_MIXED_LINES = "arguments.mixed.lines";
   private Set<String> include = Collections.emptySet();
