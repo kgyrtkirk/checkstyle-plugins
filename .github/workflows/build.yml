@@ -1,16 +1,65 @@
+#asd
 name: Build / Test
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 
 jobs:
+  joke:
+    runs-on: ubuntu-latest
+    steps:
+    - name: joke
+      run: ls
+
   build-gradle-project:
+    needs: joke
     runs-on: ubuntu-latest
     steps:
     - name: Checkout project sources
       uses: actions/checkout@v3
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: 17
+        cache: gradle
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle Wrapper
       run: ./gradlew build
+
+  b2:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Use JDK 21.0.4 to work around https://github.com/apache/druid/issues/17429
+        jdk: [ '11', '17', '21.0.4' ]
+    steps:
+    - name: Checkout project sources
+      uses: actions/checkout@v3
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: ${{ matrix.jdk }}
+        cache: gradle
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+    - name: Run build with Gradle Wrapper
+      run: ./gradlew build
+
+  joke2:
+    runs-on: ubuntu-latest
+    steps:
+    - name: joke
+      run: lsx
+
+  actions-timeline:
+    needs: [joke,build-gradle-project,b2,joke2]
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    steps:
+      - uses: Kesin11/actions-timeline@v2
+
