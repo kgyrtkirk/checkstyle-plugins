@@ -7,4 +7,4 @@ on:
 jobs:
   some:
     uses: ./.github/workflows/sub1.yml
-    #secrets: inherit
+    secrets: inherit
