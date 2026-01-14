@@ -2,6 +2,7 @@ name: Sub1
 
 jobs:
   j1:
+    runs-on: ubuntu-latest
     steps:
       - run: ls
         env:
