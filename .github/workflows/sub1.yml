@@ -2,6 +2,9 @@ name: Sub1
 
 on:
   workflow_call:
+    secret:
+      MY_SECRET:
+        required: true
 
 jobs:
   j1:
