@@ -1,9 +1,9 @@
 name: Build / Test
 
 on:
-  pull_request:
+  workflow_call:
 
 jobs:
   some:
-    uses: ./.github/workflows/sub2.yml
+    uses: ./.github/workflows/sub1.yml
     secrets: inherit
