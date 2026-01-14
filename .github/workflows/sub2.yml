@@ -1,0 +1,9 @@
+name: Build / Test
+
+on:
+  workflow_call:
+
+jobs:
+  some:
+    uses: ./.github/workflows/sub1.yml
+    #secrets: inherit

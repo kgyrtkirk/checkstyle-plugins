@@ -1,0 +1,16 @@
+name: Sub1
+
+on:
+  workflow_call:
+#    secrets:
+#      MY_SECRET:
+#        required: true
+
+jobs:
+  j1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $S; echo $PWD; echo $PATH
+        env:
+          S: ${{ secrets.MY_SECRET }}
+
