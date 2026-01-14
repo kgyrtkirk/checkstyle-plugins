@@ -2,9 +2,9 @@ name: Sub1
 
 on:
   workflow_call:
-    secrets:
-      MY_SECRET:
-        required: true
+#    secrets:
+#      MY_SECRET:
+#        required: true
 
 jobs:
   j1:
