@@ -2,7 +2,7 @@ name: Sub1
 
 on:
   workflow_call:
-    secret:
+    secrets:
       MY_SECRET:
         required: true
 
