@@ -7,7 +7,7 @@ jobs:
   j1:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: echo $S; echo $PWD; echo $PATH
         env:
           S: ${{ secrets.MY_SECRET }}
 
