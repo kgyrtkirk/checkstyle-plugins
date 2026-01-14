@@ -1,0 +1,9 @@
+name: Sub1
+
+jobs:
+  j1:
+    steps:
+      - run: ls
+        env:
+          S: ${{ secrets.MY_SECRET }}
+
